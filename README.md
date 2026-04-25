@@ -1,155 +1,106 @@
 # 🎯 Face Attendance System
 
-A full-stack Face Recognition Attendance System built with:
+A simple full-stack Face Recognition Attendance System.
 
 * ⚛️ Frontend: Next.js
 * 🟢 Backend: Node.js + Express
-* 📊 Data Storage: Excel (`data.xlsx`)
 
 ---
 
-## 🚀 Features
+## 🚀 Getting Started
 
-* Face-based attendance tracking
-* Backend API for managing attendance
-* Excel-based lightweight database
-* Clean full-stack architecture
-
----
-
-## 📁 Project Structure
-
-```
-face-attendance-system/
-│
-├── backend/
-│   ├── models/
-│   ├── routes/
-│   ├── utils/
-│   ├── server.js
-│   ├── package.json
-│   └── .env.example
-│
-├── frontend/
-│   ├── app/
-│   ├── components/
-│   ├── lib/
-│   ├── public/
-│   ├── package.json
-│   └── next.config.ts
-│
-└── README.md
-```
-
----
-
-## ⚙️ Setup Instructions
-
-### 🔹 1. Clone the repository
+### 1. Clone the repo
 
 ```bash
-git clone https://github.com/AnshSharma10903/face-attendance-system-.git
-cd face-attendance-system-
+git clone https://github.com/your-username/face-attendance-system.git
+cd face-attendance-system
 ```
 
 ---
 
-## 🔹 2. Setup Backend
+## 📦 Install dependencies (one-time)
 
 ```bash
-cd backend
-npm install
+cd backend && npm install && cd ../frontend && npm install
 ```
 
-### Create `.env` file
+---
 
-Create a file named `.env` in the backend folder:
+## 🔐 Environment Setup
+
+### Backend
+
+Create a file:
+
+```
+backend/.env
+```
+
+Add:
 
 ```
 PORT=5000
 ```
 
-### Run backend
+---
+
+### Frontend
+
+Create a file:
+
+```
+frontend/.env.local
+```
+
+Add:
+
+```
+NEXT_PUBLIC_API_URL=http://localhost:5000/api
+```
+
+---
+
+## ▶️ Run the app
+
+### Start backend
 
 ```bash
+cd backend
 npm start
 ```
 
-Backend will run on:
-👉 http://localhost:5000
-
 ---
 
-## 🔹 3. Setup Frontend
-
-Open a new terminal:
+### Start frontend (new terminal)
 
 ```bash
 cd frontend
-npm install
 npm run dev
 ```
 
-Frontend will run on:
-👉 http://localhost:3000
-
 ---
 
-## 🔗 API Connection
-
-Make sure frontend connects to backend:
+## 🌐 Open in browser
 
 ```
-http://localhost:5000
-```
-
-You can configure this using:
-
-```
-NEXT_PUBLIC_API_URL=http://localhost:5000
+http://localhost:3000
 ```
 
 ---
 
-## 📦 Requirements
+## ⚠️ Important
 
-* Node.js (v18 or higher recommended)
-* npm
+* Backend must be running before frontend
+* API URL must include `/api`
 
----
+Correct:
 
-## ⚠️ Important Notes
-
-* Do NOT upload `.env` files
-* Do NOT upload `node_modules`
-* Excel file (`data.xlsx`) is used as database
-* Backend must run before frontend
+```
+http://localhost:5000/api
+```
 
 ---
 
-## 🧪 Running the Project
+## 💡 If this helped
 
-1. Start backend
-2. Start frontend
-3. Open browser at http://localhost:3000
-
----
-
-## 📌 Future Improvements
-
-* Replace Excel with database (MongoDB / PostgreSQL)
-* Add authentication system
-* Improve face recognition accuracy
-* Deploy to cloud
-
----
-
-## 👨‍💻 Author
-
-Ansh Sharma
-
----
-
-## ⭐ If you like this project
-
-Give it a star on GitHub ⭐
+Drop a ⭐ on the repo — it helps more than you think
