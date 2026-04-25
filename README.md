@@ -1,92 +1,155 @@
-# 🎭 FaceAttend — Portable Face Recognition Attendance System
+# 🎯 Face Attendance System
 
-A standalone, locally-runnable attendance system using real-time face recognition. This version is built to be **portable**, using **Excel (`data.xlsx`)** as its database—no complex database installation required!
+A full-stack Face Recognition Attendance System built with:
 
----
-
-## ✨ Key Features
-
-| Feature | Description |
-|---|---|
-| 🎥 **Live Recognition** | Real-time webcam face detection & matching. |
-| 👤 **User Registration** | Register users with Face ID and Employee ID. |
-| 📋 **Excel Database** | Data is stored in `data.xlsx` for easy viewing and portability. |
-| 📅 **Clean Exports** | Automatically splits registration and attendance into readable **Date** and **Time** columns. |
-| 🔒 **"Useless Data" Hidden** | Technical face data (descriptors) is kept in a separate sheet to keep your logs clean. |
-| 🌐 **100% Offline** | Face recognition runs entirely in your browser—no data leaves your PC. |
-| 🚀 **One-Click Start** | Simply run `start.bat` to launch both backend and frontend. |
+* ⚛️ Frontend: Next.js
+* 🟢 Backend: Node.js + Express
+* 📊 Data Storage: Excel (`data.xlsx`)
 
 ---
 
-## 🛠️ Requirements & Utilities
+## 🚀 Features
 
-To run this project, you need the following installed on your PC:
-
-1.  **[Node.js](https://nodejs.org/) (preferred node-v24.15.0-x64)**: The core engine that runs the application.
-2.  **A Webcam**: For face detection and registration.
-3.  **Modern Browser**: Chrome, Edge, or Firefox (Chrome recommended).
-4.  **Excel / Spreadsheet Viewer**: To view the `data.xlsx` database.
+* Face-based attendance tracking
+* Backend API for managing attendance
+* Excel-based lightweight database
+* Clean full-stack architecture
 
 ---
 
-## 🚀 Quick Start (How to Use)
+## 📁 Project Structure
 
-### 1. Initial Setup
-The first time you use the app on a new PC, you need to install the hidden dependencies.
-- Open a terminal/command prompt in the project folder.
-- Run the following commands:
-  ```bash
-  cd backend && npm install
-  cd ../frontend && npm install
-  ```
-
-### 2. Launching the App
-Simply double-click the **`start.bat`** file in the main folder.
-- This will open two windows (Backend and Frontend).
-- Wait for them to load.
-- Your browser should automatically open, or you can go to: **`http://localhost:3000`**
-
----
-
-## 🎯 Application Workflow
-
-### Step 1: Register Users
-1. Go to the **Register** page.
-2. Enter the **Name** and **Employee ID**.
-3. Click **"Capture & Register"**. The system will capture face data and save it to the Excel database.
-
-### Step 2: Mark Attendance
-1. Go to the **Attendance** page.
-2. Click **"Start Attendance"**.
-3. Stand in front of the camera. When your face is recognized, attendance is marked instantly.
-4. The system prevents marking attendance more than once per day.
-
-### Step 3: View Data
-- Open the **`data.xlsx`** file in the root directory.
-- **Users Sheet**: Shows registered users with separate `date` and `time` of registration.
-- **Attendance Sheet**: Shows all attendance logs with `date`, `time`, `name`, and `status`.
-- **FaceData Sheet**: (Hidden Data) Contains the technical face descriptors. **Do not modify this sheet.**
+```
+face-attendance-system/
+│
+├── backend/
+│   ├── models/
+│   ├── routes/
+│   ├── utils/
+│   ├── server.js
+│   ├── package.json
+│   └── .env.example
+│
+├── frontend/
+│   ├── app/
+│   ├── components/
+│   ├── lib/
+│   ├── public/
+│   ├── package.json
+│   └── next.config.ts
+│
+└── README.md
+```
 
 ---
 
-## 🔧 Troubleshooting
+## ⚙️ Setup Instructions
 
-- **Camera not working?** Ensure no other app (like Zoom or Teams) is using the camera. Allow camera access in your browser settings.
-- **Backend error?** Ensure Node.js is installed correctly by typing `node -v` in a terminal.
-- **Excel file locked?** Close `data.xlsx` before running the app to allow the system to write new attendance records.
+### 🔹 1. Clone the repository
 
----
-
-## 📂 Project Structure
-
-- `backend/`: The server that manages data and Excel writing.
-- `frontend/`: The user interface and face recognition engine.
-- `data.xlsx`: Your portable database file.
-- `start.bat`: The shortcut to start the entire system.
+```bash
+git clone https://github.com/AnshSharma10903/face-attendance-system-.git
+cd face-attendance-system-
+```
 
 ---
 
-## 🔒 Privacy & Security
+## 🔹 2. Setup Backend
 
-- **No Images Stored**: We do not store your actual photos. We only store numerical "face descriptors" (math vectors) that cannot be turned back into photos.
-- **Local Data**: All data stays on your PC. No internet is required after the initial setup.
+```bash
+cd backend
+npm install
+```
+
+### Create `.env` file
+
+Create a file named `.env` in the backend folder:
+
+```
+PORT=5000
+```
+
+### Run backend
+
+```bash
+npm start
+```
+
+Backend will run on:
+👉 http://localhost:5000
+
+---
+
+## 🔹 3. Setup Frontend
+
+Open a new terminal:
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Frontend will run on:
+👉 http://localhost:3000
+
+---
+
+## 🔗 API Connection
+
+Make sure frontend connects to backend:
+
+```
+http://localhost:5000
+```
+
+You can configure this using:
+
+```
+NEXT_PUBLIC_API_URL=http://localhost:5000
+```
+
+---
+
+## 📦 Requirements
+
+* Node.js (v18 or higher recommended)
+* npm
+
+---
+
+## ⚠️ Important Notes
+
+* Do NOT upload `.env` files
+* Do NOT upload `node_modules`
+* Excel file (`data.xlsx`) is used as database
+* Backend must run before frontend
+
+---
+
+## 🧪 Running the Project
+
+1. Start backend
+2. Start frontend
+3. Open browser at http://localhost:3000
+
+---
+
+## 📌 Future Improvements
+
+* Replace Excel with database (MongoDB / PostgreSQL)
+* Add authentication system
+* Improve face recognition accuracy
+* Deploy to cloud
+
+---
+
+## 👨‍💻 Author
+
+Ansh Sharma
+
+---
+
+## ⭐ If you like this project
+
+Give it a star on GitHub ⭐
